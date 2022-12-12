@@ -47,3 +47,56 @@ export default function AddBudgetModal({ show, handleClose }) {
   )
 }
 
+// import { Form, Modal, Button } from "react-bootstrap"
+// import { useRef, useState, useCallback } from "react"
+// import { useBudgets } from "../contexts/BudgetsContext"
+
+// export default function AddBudgetModal({ show, handleClose }) {
+//   const { addBudget } = useBudgets()
+//   const [name, setName] = useState("")
+//   const [max, setMax] = useState(0)
+//   const formRef = useRef({ name, max })
+
+//   const handleSubmit = useCallback(() => {
+//     addBudget({
+//       name: formRef.current.name,
+//       max: parseFloat(formRef.current.max),
+//     })
+//     handleClose()
+//   }, [addBudget, handleClose, formRef])
+
+//   return (
+//     <Modal show={show} onHide={handleClose}>
+//       <Form onSubmit={handleSubmit}>
+//         <Modal.Header closeButton>
+//           <Modal.Title>New Budget</Modal.Title>
+//         </Modal.Header>
+//         <Modal.Body>
+//           <Form.Group className="mb-3" controlId="name">
+//             <Form.Label>Name</Form.Label>
+//             <Form.Control
+//               value={name}
+//               onChange={(e) => setName(e.target.value)}
+//               required
+//             />
+//           </Form.Group>
+//           <Form.Group className="mb-3" controlId="max">
+//             <Form.Label>Maximum Spending</Form.Label>
+//             <Form.Control
+//               value={max}
+//               onChange={(e) => setMax(e.target.value)}
+//               required
+//               min={0}
+//               step={0.01}
+//             />
+//           </Form.Group>
+//           <div className="d-flex justify-content-end">
+//             <Button variant="primary" type="submit">
+//               Add
+//             </Button>
+//           </div>
+//         </Modal.Body>
+//       </Form>
+//     </Modal>
+//   )
+//   }
